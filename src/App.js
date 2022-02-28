@@ -12,7 +12,7 @@ function App() {
 
   const updateCalc = value => {
      if (
-       ops.includes(value) && calc === '' ||
+       ops.includes(value) && calc === '' |
        ops.includes(value) && ops.includes(calc.slice(-1)
        )
      ) {
@@ -22,10 +22,10 @@ function App() {
       setCalc(calc + value);
 
 if (ops.includes(value.slice(-1))) {
-      setResult(eval(value.toString().slice(0,-1)));  
+      setResult(EvalError(value.toString().slice(0,-1)));  
     }
     else{
-      setResult(eval(value.toString()));  
+      setResult(EvalError(value.toString()));  
     }
   }
 
@@ -52,7 +52,7 @@ if (ops.includes(value.slice(-1))) {
       <div className="calculator">
         <div className="display">
           {result ?  <span>({result})</span> : "" } 
-           { calc || "0" } 
+           { calc | "0" } 
         </div>
 
         <div className="operators">
